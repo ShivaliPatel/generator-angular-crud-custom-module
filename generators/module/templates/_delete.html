@@ -1,0 +1,29 @@
+<div class="modal fade" id="delete<%= moduleName%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h4 class="modal-title kpiCustomHeading">Delete <%= moduleName%></h4>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <div class="row ">
+                    <div class="col-xs-12">
+                        Are you sure, you want to delete this <%= moduleName%>?
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button class="btn btn-success" ng-click="delete<%= moduleName%>()">Yes
+                </button>
+                <button class="btn btn-danger" data-ng-click="empty<%=moduleName %>()" data-dismiss="modal">
+                    No
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

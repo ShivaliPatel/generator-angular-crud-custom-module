@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="<%= appName %>">
+<head>
+    <title><%= appName %></title>
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="modules/common/assets/css/main.css"/>
+</head>
+<body ng-controller="StartUpCtrl">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Angular-CRUD-custom-module</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <% if(modules)  {%>
+                <% modules.forEach(function(module,index){ %>
+                    <li ng-class="{'active':currentState.name=='<%=module.moduleName %>'}" ><a href="#/<%= module.moduleVariable %>"><%= module.moduleName %></a></li>
+                <% }) %>
+                <% }%>
+            </ul>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<% if(!modules.length)  {%>
+<h1>Welcome to <%= appName %> application!!</h1>
+<% }%>
+<div ui-view></div>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"> </script>
+<script src="vendor/api-check/dist/api-check.js"></script>
+<script src="vendor/angular/angular.js"></script>
+<script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="vendor/angular-formly/dist/formly.js"></script>
+<script src="vendor/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+
+<script src="app.js"></script>
+<script src="modules/common/directives.js"></script>
+<script src="modules/common/filters.js"></script>
+<script src="modules/common/startUpController.js"></script>
+
+<% if(modules)  {%>
+<% modules.forEach(function(module){ %>
+<script src="<%= module.relativePath %>/<%= module.module %>/<%= module.module %>Controller.js"></script>
+<script src="<%= module.relativePath %>/<%= module.module %>/<%= module.module %>Services.js"></script>
+<% }) %>
+<% }%>
+
+</body>
+</html>

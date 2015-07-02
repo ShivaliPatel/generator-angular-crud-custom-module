@@ -1,0 +1,35 @@
+{
+  "name": "generator-angular-crud-custom-module",
+  "version": "0.0.0",
+  "description": "Yeoman generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "ShivaliPatel/generator-angular-crud-custom-module",
+  "author": {
+    "name": "Shivali Patel",
+    "email": "",
+    "url": "https://github.com/ShivaliPatel"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "angular",
+    "yeoman-generator",
+    "CRUD",
+    "Custom-module"
+  ],
+  "dependencies": {
+      "chalk": "^1.0.0",
+      "mkdirp": "^0.5.1",
+      "underscore.string": "^3.1.1",
+      "yeoman-generator": "^0.19.0",
+      "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}

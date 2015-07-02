@@ -1,0 +1,28 @@
+<div class="modal fade " id="update<%= moduleName%>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog mediumModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title kpiCustomHeading">Update <%= moduleName%></h4>
+            </div>
+            <form name="update<%= moduleName%>Form">
+                <div class="modal-body">
+                    <div class='row'>
+                        <div class='col-xs-12'>
+                            <formly-form model='current<%= moduleName %>' fields='<%= module%>Fields'></formly-form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button class="btn btn-primary" ng-click="update<%= moduleName%>()"
+                            ng-disabled="update<%= moduleName%>Form.$invalid">Save
+                    </button>
+                    <button class="btn" data-ng-click="empty<%=moduleName %>()" data-dismiss="modal">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

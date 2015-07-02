@@ -1,0 +1,79 @@
+<div class="container-fluid" ng-animate="'animate'">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="moduleHeader">
+                <%= moduleName %>
+            </h2>
+
+            <a ng-click="openAdd<%= moduleName%>()" class="btn btn-primary pull-right">Add <%= moduleName%>
+            </a>
+
+            <div class="col-md-3 pull-right">
+                <input type="text" class="form-control customSearch" ng-model="<%= moduleVariable %>Search"
+                       placeholder="Search <%= moduleName%>">
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 m-t-20" >
+
+        <div class="row moduleContainer" >
+            <div ng-if="!(<%= moduleVariable%> | searchObject: <%= moduleVariable%>Search).length"
+                 class="alert alert-block alert-info">
+                <span class="pull-right close" data-dismiss="alert"></span>
+                <h4 class="alert-heading">Oops!</h4>
+                There are no <%= moduleName%>s here!
+            </div>
+
+
+            <table ng-hide="!(<%= moduleVariable%>  | searchObject: <%= moduleVariable%>Search ).length"
+                   class="table table-striped table-hover table-bordered dataTable">
+                <thead>
+                <tr role="row">
+                    <% listFields.forEach(function(field){ %>
+                    <th role="columnheader" ng-click="sort='<%=field.key%>';reverse=!reverse">
+                        <%=field.templateOptions.label%>
+                    </th>
+                    <% }) %>
+
+                    <th role="columnheader" class="actionTH">Actions</th>
+                </tr>
+                </thead>
+                <tbody role="alert" aria-live="polite" aria-relevant="all" right-menu id="rightContextMenu">
+                <tr ng-repeat="<%=module%> in <%= moduleVariable%> | searchObject:<%= moduleVariable%>Search | orderObjectBy:sort:reverse"
+                    ng-animate="''">
+                    <% listFields.forEach(function(field){ %>
+                    <td>
+                        {{ <%= module%>['<%=field.key%>'] }}
+                    </td>
+                    <% }) %>
+
+                    <td>
+                        <button class="btn btn-success btn-xs" tooltip-init
+                                data-toggle="tooltip" data-placement="top" title="Update"
+                                ng-click="openUpdate<%= moduleName%>(<%=module%>)">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </button>
+                        <button class="btn btn-danger btn-xs" tooltip-init
+                                data-toggle="tooltip" data-placement="top" title="Delete"
+                                ng-click="openDelete<%= moduleName%>(<%=module%>)">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <ng-include src="'<%=relativePath%>/<%=module%>/views/add<%=moduleName%>.html'"></ng-include>
+    <ng-include src="'<%=relativePath%>/<%=module%>/views/update<%=moduleName%>.html'"></ng-include>
+    <ng-include src="'<%=relativePath%>/<%=module%>/views/delete<%=moduleName%>.html'"></ng-include>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+</div>
