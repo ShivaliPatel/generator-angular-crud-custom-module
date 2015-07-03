@@ -7,20 +7,16 @@
 To use generator-angular-curd-custom-module generator, please go through below steps.
 <ol>
     <li> Install ``yo``.
-        <br>
+        <br><br>
         <pre>npm install -g yo</pre>
         </li>
     <li> Install `generator-angular-crud-custom-module` from npm.
-        <br>
-        <pre>
-        npm install -g generator-angular-crud-custom-module
-        </pre>
+        <br><br>
+        <pre>npm install -g generator-angular-crud-custom-module</pre>
         </li>
     <li> To initiate the generator, create a new folder and change terminal directory to the folder, Run:
-        <br>
-        <pre>
-        yo generator-angular-crud-custom-module
-        </pre>
+        <br><br>
+        <pre>yo generator-angular-crud-custom-module</pre>
         This command will generate following items:
         <ul>
             <li>app
@@ -46,10 +42,8 @@ To use generator-angular-curd-custom-module generator, please go through below s
         </ul>
         </li>
     <li> To create dynamic module, run:
-        <br>
-        <pre>
-        yo angular-crud-custom-module:module
-        </pre>
+        <br><br>
+        <pre>yo angular-crud-custom-module:module</pre>
         This will asked you couple of questions.Like module name,path to generate it and fields of the module. After applying this command, controllers,services and view files of this module will be generated and generated items:
         <br>Lets take `customer` as module
         <ul>
