@@ -58,7 +58,11 @@ To use generator-angular-curd-custom-module generator, please go through below s
                     </ul>
                     <li>customerController.js</li>
                     <li>customerServices.js</li>
-                </ul></li></ul></li><ol>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ol>
 If you want to add more modules,then repeat step 4.
 
 ## Example
