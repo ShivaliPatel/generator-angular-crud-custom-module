@@ -8,9 +8,7 @@ To use generator-angular-curd-custom-module generator, please go through below s
 <ol>
     <li> Install ``yo``.
         <br>
-        <pre>
-        npm install -g yo
-        </pre>
+        <pre>npm install -g yo</pre>
         </li>
     <li> Install `generator-angular-crud-custom-module` from npm.
         <br>
