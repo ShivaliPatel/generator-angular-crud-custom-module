@@ -16,7 +16,7 @@ To use generator-angular-curd-custom-module generator, please go through below s
         </li>
     <li> To initiate the generator, create a new folder and change terminal directory to the folder, Run:
         <br><br>
-        <pre>yo generator-angular-crud-custom-module</pre>
+        <pre>yo angular-crud-custom-module</pre>
         This command will generate following items:
         <ul>
             <li>app
